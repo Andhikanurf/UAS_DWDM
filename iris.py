@@ -1,9 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[9]:
-
-
 import streamlit as st
 import pandas as pd
 import pickle
@@ -11,7 +5,8 @@ import pickle
 model = pickle.load(open('model.pkl', 'rb'))
 
 st.header("Iris Classification:")
-st.image = ('iris-dataset.png')
+image = ('iris-dataset.png')
+st.write("Please insert values, to get Iris class prediction")
 
 SepalLengthCm = st.slider('SepalLengthCm:', 2.0, 6.0)
 SepalWidthCm = st.slider('SepalWidthCm:', 0.0, 5.0)
@@ -32,10 +27,3 @@ st.subheader('Prediction Percentages:')
 st.write('**Probablity of Iris Class being Iris-setosa is ( in % )**:',pred_proba[0][0]*100)
 st.write('**Probablity of Isis Class being Iris-versicolor is ( in % )**:',pred_proba[0][1]*100)
 st.write('**Probablity of Isis Class being Iris-virginica ( in % )**:',pred_proba[0][2]*100)
-
-
-# In[ ]:
-
-
-
-
